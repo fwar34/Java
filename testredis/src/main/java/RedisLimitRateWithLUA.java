@@ -30,8 +30,8 @@ public class RedisLimitRateWithLUA {
 
     public static boolean accquire() throws IOException, URISyntaxException {
         Jedis jedis = new Jedis("192.168.32.86");
-        File luaFile = new File(RedisLimitRateWithLUA.class.getResource("/").toURI().getPath() + "limit.lua");
-//        System.out.println(RedisLimitRateWithLUA.class.getResource("/").toURI().getPath() + "limit.lua");
+//        File luaFile = new File(RedisLimitRateWithLUA.class.getResource("/").toURI().getPath() + "limit.lua");
+        File luaFile = new File(RedisLimitRateWithLUA.class.getResource("/").toURI().getPath() + "rate_limit.lua");
         String luaScript = FileUtils.readFileToString(luaFile);
 
         String key = "ip:" + System.currentTimeMillis() / 1000;
@@ -40,6 +40,7 @@ public class RedisLimitRateWithLUA {
         keys.add(key);
         List<String> args = new ArrayList<String>();
         args.add(limit);
+        args.add("5");
         Long result = (Long)(jedis.eval(luaScript, keys, args));
         return result == 1;
     }
