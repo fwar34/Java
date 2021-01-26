@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9efc5992-aac9-4e75-aee5-b23fc0c7baa8" name="Default Changelist" comment="update">
+    <list default="true" id="9efc5992-aac9-4e75-aee5-b23fc0c7baa8" name="Default Changelist" comment="remove warning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Mybatis_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mybatis_config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +50,13 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="git status" />
+      <command value="git diff" />
+    </option>
   </component>
   <component name="RunManager" selected="Application.Application">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
@@ -111,7 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611645775376</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix compile error">
+      <created>1611646159208</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611646159208</updated>
+    </task>
+    <task id="LOCAL-00003" summary="remove warning">
+      <created>1611646318693</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611646318693</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,7 +147,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="fix compile error" />
+    <MESSAGE value="remove warning" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove warning" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
