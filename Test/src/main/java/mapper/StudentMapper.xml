@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.StudentMapper">
+    <select id="getStudentPojo" parameterType="long" resultType="studentPojo">
+        select * from student where id = #{id}
+    </select>
+    <insert id="insertStudentPojo" parameterType="studentPojo">
+        insert into student values(#{id},#{name},#{sex})
+    </insert>
+    <delete id="deleteStudentPojo" parameterType="long">
+        delete from student where id=#{id}
+    </delete>
+</mapper>
