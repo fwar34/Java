@@ -20,9 +20,9 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mapper/StudentMapper.xml" />
+<!--        <mapper resource="mapper/StudentMapper.xml" />-->
 <!--        <mapper class="mapper.StudentMapper" />-->
 <!--        <package name="mapper"/>-->
-<!--        <mapper url="file:///C:\Users\liang.feng\IdeaProjects\Test\src\main\java\mapper\StudentMapper.xml" />-->
+        <mapper url="file:///C:\Users\liang.feng\IdeaProjects\Test\src\main\java\mapper\StudentMapper.xml" />
     </mappers>
 </configuration>
