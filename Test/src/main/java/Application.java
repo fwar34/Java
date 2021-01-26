@@ -6,8 +6,7 @@ import utils.SqlSessionFactoryUtils;
 public class Application {
     public static void main(String[] args) {
         System.out.println("main run...");
-        SqlSession sqlSession = null;
-        sqlSession = SqlSessionFactoryUtils.openSqlSession();
+        SqlSession sqlSession = SqlSessionFactoryUtils.openSqlSession();
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
 
         //delete
