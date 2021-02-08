@@ -1,0 +1,25 @@
+package com.test.learnjava.servlt;
+
+import com.test.learnjava.bean.School;
+import com.test.learnjava.bean.User;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet(urlPatterns = "/user")
+public class UserServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 假装从数据库读取:
+        School school = new School("No.1 Middle School", "101 North Street");
+        User user = new User(123, "Bob", school);
+        // 放入Request中:
+        request.setAttribute("user", user);
+        // forward给user.jsp:
+        request.getRequestDispatcher("/WEB-INF/user.jsp").forward(request, response);
+    }
+}
