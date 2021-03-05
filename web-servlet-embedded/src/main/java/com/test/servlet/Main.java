@@ -19,7 +19,7 @@ public class Main {
         Context context = tomcat.addWebapp("", new File("src/main/webapp").getAbsolutePath());
         WebResourceRoot resources = new StandardRoot(context);
         resources.addPreResources(
-                new DirResourceSet(resources, "WEB-INF/classes", new File("target/classes").getAbsolutePath(), "/")
+                new DirResourceSet(resources, "/WEB-INF/classes", new File("target/classes").getAbsolutePath(), "/")
         );
         context.setResources(resources);
         tomcat.start();

@@ -2,3 +2,6 @@
 !*/target/classes/*.lua
 **/out
 /.metadata/
+**/*.log
+**/*.lck
+
