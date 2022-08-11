@@ -16,14 +16,15 @@ public class OrderConsumer {
     public static void main(String[] args) throws Exception {
         DefaultMQPushConsumer defaultMQPushConsumer = new DefaultMQPushConsumer("UniqueConsumerGroupName");
         defaultMQPushConsumer.setNamesrvAddr("192.168.32.228:9876");
-        /**
-         * 设置Consumer第一次启动是从队列头部开始消费还是队列尾部开始消费<br>
-         * 如果非第一次启动，那么按照上次消费的位置继续消费
+        /*
+          设置Consumer第一次启动是从队列头部开始消费还是队列尾部开始消费<br>
+          如果非第一次启动，那么按照上次消费的位置继续消费
          */
         defaultMQPushConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         defaultMQPushConsumer.subscribe("TEST_FL", "tagA || tagB || tagC");
         defaultMQPushConsumer.registerMessageListener(new MessageListenerOrderly() {
-            Random random = new Random();
+            final Random random = new Random();
+
             @Override
             public ConsumeOrderlyStatus consumeMessage(List<MessageExt> msgs, ConsumeOrderlyContext context) {
                 context.setAutoCommit(true);
