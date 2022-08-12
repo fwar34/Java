@@ -8,7 +8,7 @@ public class SyncProducer {
         defaultMQProducer.setNamesrvAddr("192.168.32.228:9876");
         defaultMQProducer.start();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             Message msg = new Message("TEST_FL", ("hello rocketmq" + i).getBytes());
             SendResult sendResult = defaultMQProducer.send(msg);
             System.out.printf("%s%n", sendResult);
