@@ -7,6 +7,7 @@ import java.util.Map;
 public class Conference implements Serializable {
     private String name;
     private int id;
+    private String properties;
 
     public Map<Integer, User> getUsers() {
         return users;
@@ -48,10 +49,36 @@ public class Conference implements Serializable {
     public byte[] serialize() {
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         try (ObjectOutputStream outputStream = new ObjectOutputStream(buffer)) {
-            outputStream.writeObject(this);
+            outputStream.writeInt(id);
+            outputStream.writeObject(name);
+            if (!properties.isEmpty()) {
+                outputStream.writeObject(properties);
+            }
             return buffer.toByteArray();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return null;
         }
+    }
+
+    public boolean deserialize(byte[] bytes) {
+        ByteArrayInputStream buffer = new ByteArrayInputStream(bytes);
+        try (ObjectInputStream inputStream = new ObjectInputStream(new BufferedInputStream(buffer))) {
+            this.id = inputStream.readInt();
+            this.name = (String) inputStream.readObject();
+            this.properties = (String) inputStream.readObject();
+            return true;
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public String getProperties() {
+        return properties;
+    }
+
+    public void setProperties(String properties) {
+        this.properties = properties;
     }
 }
