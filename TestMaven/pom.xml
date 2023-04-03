@@ -19,7 +19,7 @@
 
 		<spring.version>5.2.0.RELEASE</spring.version>
 		<hikaricp.version>3.4.2</hikaricp.version>
-		<hsqldb.version>2.5.0</hsqldb.version>
+		<hsqldb.version>2.7.1</hsqldb.version>
 	</properties>
 
 	<dependencies>
