@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WebRTC</title>
+</head>
+<body>
+	<video src="" id="myvideo" style="width: 640px; height: 480px;"></video>
+	<script type="text/javascript">
+		function draw() {
+			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+			navigator.getUserMedia({audio:true, video:true}, success, console.log);
+		}
+		
+		var success = function(stream) {
+			document.getElementById("myvideo").srcObject = stream;
+		}
+		draw();
+	</script>
+</body>
+</html>
